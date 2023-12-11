@@ -20,10 +20,11 @@ return new class extends Migration
             $table->string('customer_name');
             $table->string('customer_phone');
             $table->string('customer_email');
-            $table->string('book_type');    
+            $table->string('book_type');
             $table->string('customer_status');
             $table->string('describe')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

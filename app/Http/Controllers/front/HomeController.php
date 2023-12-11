@@ -24,15 +24,15 @@ class HomeController extends Controller
     public function search_hospital(){
         $cate_hospital =  DB::table('all_category_hospital')->get();
         return view('front.Search_Hospital')->with('cate_hospital',$cate_hospital);
-    }   
+    }
     public function search_doctor(){
         $cate_doctor =  DB::table('all_category_doctor')->get();
         return view('front.Search_Doctor')->with('cate_doctor',$cate_doctor);
-    }   
+    }
     public function search_service(){
         //$cate_doctor =  DB::table('all_category_doctor')->get();
         return view('front.Search_Service');//->with('cate_doctor',$cate_doctor);
-    }   
+    }
     public function ho_so_csyt($hospital_code){
       $show_detail_hospital = DB::table('all_category_hospital')->where('hospital_code',$hospital_code)->get();
       $show_detail_doctor = DB::table('all_category_doctor')->where('hospital_code',$hospital_code)->get();
@@ -62,14 +62,13 @@ class HomeController extends Controller
             'email' => $request->signin_email,
             'password' =>$request->signin_password,
         ];
-        $remember = $request->remember;
-        if(Auth::attempt($credentials,$remember)) {
+        if(Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended();
+            return redirect()->route('home')->with('success','Đăng nhập thành công');
         }
         else{
-            return 'fail';
-          // return  back()->with('notification','ERROR: Email or Password is wrong');
+
+           return  back()->with('notification','ERROR: Email or Password is wrong');
         }
      }
      public function logout(){

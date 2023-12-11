@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('show_detail_doctor', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

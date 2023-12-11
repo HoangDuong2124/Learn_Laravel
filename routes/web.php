@@ -51,7 +51,6 @@ Route::get('/admin-login', function () {
 
 Route::post('/admin-dashboard',[dashboard\AdminController::class,'dashboard']);
 Route::get('/admin-dashboard',[dashboard\AdminController::class,'admin_dashboard']);
-Route::get('/admin',[dashboard\AdminController::class,'show_all_book']);
 Route::get('/logout',[dashboard\AdminController::class,'log_out']);
 Route::get('/search-customer',[dashboard\AdminController::class,'show_customer']);
 Route::get('/show-detail-customer/{customer_id}',[dashboard\AdminController::class,'show_detail_customer']);
