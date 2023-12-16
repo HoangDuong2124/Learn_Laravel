@@ -4,7 +4,7 @@
 <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Form_component :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
@@ -17,7 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="{{asset('dashboard/css/font.css')}}" type="text/css"/>
-<link href="{{asset('dashboard/css/font-awesome.css')}}" rel="stylesheet"> 
+<link href="{{asset('dashboard/css/font-awesome.css')}}" rel="stylesheet">
 <!-- //font-awesome icons -->
 <script src="{{asset('dashboard/js/jquery2.0.3.min.js')}}"></script>
 
@@ -227,12 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="dashboard/img/2.png">
                 <span class="username">
-                <?php
-	                                  $name= Session::get('admin_name');
-	                                    if($name){
-		                                    echo $name ;
-		                            }
-	                              ?>
+                    {{Auth::guard('admin')->user()->admin_name}}
                 </span>
                 <b class="caret"></b>
             </a>
@@ -243,7 +238,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </ul>
         </li>
         <!-- user login dropdown end -->
-       
+
     </ul>
     <!--search & user info end-->
 </div>
@@ -261,12 +256,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
                         <span>Booking </span>
-                        
+
                     </a>
                     <ul class="sub">
 						<li><a href="/admin-all-category-hospital">Danh sánh bệnh viện</a></li>
@@ -290,8 +285,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="responsive_table.html">Responsive Table</a></li>
                     </ul>
                 </li>
-              
-               
+
+
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>
@@ -303,7 +298,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="form-w3layouts">
         <!-- page start-->
         <!-- page start-->
- 
+
             @yield('admin_content')
        <!-- page end-->
        </div>

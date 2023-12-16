@@ -10,7 +10,7 @@
              <form action="{{URL::to('/timkiem-bs')}}" method="post">
              {{ csrf_field() }}
                 <div class="search-box">
-                     
+
                    <div class="search-input">
                       <span class="icon-search">
                       <input type="submit" style="display:none">
@@ -26,24 +26,24 @@
                        <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="0.9em" height="0.9em" fill="currentColor" aria-hidden="true"><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg>
                        </span>
                    </div>
-                   
+
                 </div>
              </form>
-             </div> 
+             </div>
            </div>
 
        <div class="btn-content-hospital">
           <div class="btn-content-hospital-title">
              <div>Chọn bác sĩ</div>
           </div>
-            <div class="container">  
+            <div class="container">
            <div class="row">
              @foreach($cate_doctor as $key => $cate)
            <div class="col-lg-3" style="padding-left: 15px; padding-right: 15px;">
              <div class="styled__WrapDoctor-sc-16nbxge-1 eQWZSE">
                  <div class="wrap_info">
                     <div class="logo">
-                        <img src="upload/doctor/{{$cate->img_doctor}}" alt="PGS.TS.  Nguyễn Quang" class="avatar">
+                        <img src="upload/doctor/{{$cate->img_doctor}}" alt="{{$cate->name_doctor}}" class="avatar">
                     </div>
                 <div class="info">
                     <h3 class="name">
@@ -59,9 +59,9 @@
                 </div>
                 <div class="hospital-name">{{$cate->hospital_doctor}}
                 </div>
-              <div class="specializations">{{$cate->specialist_doctor}} 
+              <div class="specializations">{{$cate->specialist_doctor}}
               </div>
-             
+
               </div>
              <div class="price-info">
           <div class="price-title">Giá khám:</div>
@@ -80,7 +80,7 @@
               @endforeach
       </div>
       </div>
-      
+
 
       <div class="container-pagination">
         <ul class="ant-pagination" unselectable="unselectable">
@@ -104,7 +104,7 @@
                     </li></ul></div>
 
       </div>
-       </div> 
+       </div>
       </div>
-      
+
 @endsection

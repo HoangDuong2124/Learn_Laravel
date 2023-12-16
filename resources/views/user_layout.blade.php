@@ -338,6 +338,59 @@ use Illuminate\Support\Facades\Auth;
         ?>
 
 
+{{-- @if(Auth::check())
+    <div class="justify-content-user">
+<div class="wrap-link-test">
+<div class="hotline">
+    <span class="text-hotline">Hotline đặt khám: </span>
+    <span class="link-hotline">
+        <a style="text-decoration: none;" href="#">0912345678</a>
+    </span>
+</div>
+<div class="support">
+    <a style="text-decoration: none;" href="#">Trung tâm trợ giúp</a>
+</div>
+</div>
+    <div class="wrap-user-login">
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <img alt="" src="/dashboard/img/2.png">
+        <span class="username">
+
+        {{Auth::user()->name}}
+
+        </span>
+        <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu-user extended logout ">
+        <li><a href="#"><i style="margin-right:3px;color:blueviolet" class=" fa-solid fa-user"></i> Profile</a></li>
+        <li><a href="/history-user"><i style="margin-right:3px;color:blueviolet" class="fa-regular fa-calendar-days"></i> Booking History</a></li>
+        <li><a href="#"><i style="margin-right:3px;color:#8b8e9e;" class="fa fa-cog"></i>  Settings</a></li>
+        <li><a href="/logout-user"><i style="margin-right:3px;color:#8b8e9e" class="fa fa-key"></i> Log Out</a></li>
+    </ul>
+    </div>
+ @else
+    <div class="justify-content">
+    <div class="wrap-link-test">
+        <div class="hotline">
+            <span class="text-hotline">Hotline đặt khám: </span>
+            <span class="link-hotline">
+                <a style="text-decoration: none;" href="#">0912345678</a>
+            </span>
+        </div>
+        <div class="support">
+            <a style="text-decoration: none;" href="#">Trung tâm trợ giúp</a>
+        </div>
+    </div>
+    <div class="wrap-user">
+    <div class="cd-signup">
+        <a style="text-decoration: none; cursor:pointer" >Đăng kí</a>
+    </div>
+    <div class="space"></div>
+    <div class="cd-signin">
+        <a style="text-decoration: none;cursor:pointer" >Đăng nhập</a>
+    </div>
+</div>
+@endif --}}
 
         </div>
     </div>
@@ -363,7 +416,8 @@ use Illuminate\Support\Facades\Auth;
               </div>   -->
             <div id="cd-login">
                 <!-- log in form -->
-                <form class="cd-form" action="/signin-user" method="get">
+                <form class="cd-form" action="/signin-user" method="post">
+                    @csrf
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signin_email">Email
               </label>
@@ -398,7 +452,7 @@ use Illuminate\Support\Facades\Auth;
             <!-- cd-login -->
             <div id="cd-signup">
                 <!-- sign up form -->
-                <form action="/signup-user" method="get"  class="cd-form" >
+                <form action="/signup-user" method="post"  class="cd-form" >
                   @csrf
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup_username" >Username

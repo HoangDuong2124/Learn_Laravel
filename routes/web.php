@@ -35,8 +35,8 @@ Route::get('/handbook', function () {
 Route::get('/doi-tac', function () {
     return view('front.Doitac');
 });
-Route::get('/signup-user',[front\HomeController::class,'signup_user']);
-Route::get('/signin-user',[front\HomeController::class,'signin_user']);
+Route::post('/signup-user',[front\HomeController::class,'signup_user']);
+Route::post('/signin-user',[front\HomeController::class,'signin_user']);
 Route::get('/history-user',[front\CheckOutController::class,'history_book']);
 Route::get('/logout-user',[front\HomeController::class,'logout']);
 Route::post('/timkiem-bv',[front\CheckOutController::class,'search_hospital']);
@@ -47,11 +47,12 @@ Route::post('/send-book',[front\CheckOutController::class,'sendBook']);
 /*** ADMIN*****/
 Route::get('/admin-login', function () {
     return view('dashboard.admin_login');
-});
-
+})->name('admin.login');
 Route::post('/admin-dashboard',[dashboard\AdminController::class,'dashboard']);
-Route::get('/admin-dashboard',[dashboard\AdminController::class,'admin_dashboard']);
+Route::middleware(['auth.adminlogin'])->group(function () {
+
 Route::get('/logout',[dashboard\AdminController::class,'log_out']);
+Route::get('/admin-dashboard',[dashboard\AdminController::class,'admin_dashboard'])->name('admin.index');
 Route::get('/search-customer',[dashboard\AdminController::class,'show_customer']);
 Route::get('/show-detail-customer/{customer_id}',[dashboard\AdminController::class,'show_detail_customer']);
 Route::get('/update-detail-customer/{customer_id}',[dashboard\AdminController::class,'update_detail_customer']);
@@ -68,3 +69,9 @@ Route::get('/admin-edit-category-doctor/{doctor_id}',[dashboard\ProductControlle
 Route::post('/save-category-doctor',[dashboard\ProductController::class,'save_category_doctor']);
 Route::post('/admin-update-category-doctor/{doctor_id}',[dashboard\ProductController::class,'update_category_doctor']);
 Route::get('/admin-delete-category-doctor/{doctor_id}',[dashboard\ProductController::class,'delete_category_doctor']);
+});
+Route::get('test1',function(){
+    return view('test');
+})->name('test');
+Route::get('test2',[front\HomeController::class,'test2']);
+

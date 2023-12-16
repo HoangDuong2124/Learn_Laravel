@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-use Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Testing\Fluent\Concerns\Has;
 use function Sodium\compare;
@@ -48,14 +47,19 @@ class HomeController extends Controller
         return view('front.Book_doctor')->with('show_detail_doctor',$show_detail_doctor);
       }
     public function signup_user(Request $request){
+        $check_email = DB::table('users')->where('email',$request->signup_email)->count()==0;
         $data = array();
         $data['name'] = $request->signup_username;
         $data['phonenumber'] = $request->signup_phone;
         $data['email'] = $request->signup_email;
         $data['password'] = Hash::make($request->signup_password);
-        DB::table('users')->insert($data);
-        Session::put('message','Đăng kí tài khoản thành công');
-        return Redirect::to('/');
+        if($check_email){
+            DB::table('users')->insert($data);
+            return redirect()->route('home')->with('success','Đăng kí thành công');
+        }
+        else{
+            return redirect()->route('home')->with('error','Tài khoản email đã được đăng kí');
+        }
      }
      public function signin_user(Request $request){
         $credentials = [
@@ -68,7 +72,7 @@ class HomeController extends Controller
         }
         else{
 
-           return  back()->with('notification','ERROR: Email or Password is wrong');
+           return  back()->with('error','ERROR: Email or Password is wrong');
         }
      }
      public function logout(){
@@ -76,4 +80,11 @@ class HomeController extends Controller
        //return back();
         return Redirect::to('/');
     }
+    // public function test1(){
+    //     return view('test');
+    // }
+    public function test2(){
+          return redirect('test1')->with('test','Hello ưorl');
+}
+
 }

@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
                 'phonenumber' => '09123456789',
                 'email' => 'abc@gmail.com',
                 'password' => Hash::make('123456789'),
-                
+
             ],
             [
                 'id' => 2,
@@ -34,28 +34,28 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('account_admin')->insert([
             [
-                'admin_id' => 1,
+                'id' => 1,
                 'admin_email' =>'duonghm@gmail.com',
                 'admin_name' => 'Hoàng Dương ',
                 'admin_phone' => '09123456789',
-                'admin_password' => Hash::make('21242003'),
-                 
+                'password' => Hash::make('21242003'),
+
             ],
             [
-                'admin_id' => 2,
+                'id' => 2,
                 'admin_email' =>'nhinguyen@gmail.com',
                 'admin_name' => 'Nguyễn Thị Hảo Nhi ',
                 'admin_phone' => '09123456789',
-                'admin_password' => Hash::make('21242003'),
-                 
+                'password' => Hash::make('21242003'),
+
             ],
             [
-                'admin_id' => 3,
+                'id' => 3,
                 'admin_email' =>'hanguyen@gmail.com',
                 'admin_name' => '<a href="https://www.facebook.com/">click</a> ',
                 'admin_phone' => '09123456789',
-                'admin_password' => Hash::make('21242003'),
-                 
+                'password' => Hash::make('21242003'),
+
             ],
         ]);
     }
