@@ -20,3 +20,6 @@ Sử dụng lệnh sau để khởi chạy máy chủ phát triển của Larave
 Mặc định, máy chủ sẽ chạy tại http://localhost:8000. Bạn có thể truy cập đường dẫn này trong trình duyệt để kiểm tra dự án của mình.
 Nhớ rằng, để chạy các lệnh Laravel, bạn cần cài đặt PHP và Composer trước đó. Hãy chắc chắn rằng bạn đã cài đặt chúng và cấu hình đúng đắn trên máy tính của mình.
 
+TÀI KHOẢN ĐỂ TEST CHỨC NĂNG:
+- Tài khoản người dùng:  email: 'abc@gmail.com', password: '123456789'
+- Tài khoản admin: email: 'admin@gmail.com', password: 'admin1234'
