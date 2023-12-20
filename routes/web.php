@@ -24,7 +24,7 @@ Route::get('/search-doctor',[front\HomeController::class,'search_doctor']);
 Route::get('/search-service',[front\HomeController::class,'search_service']);
 Route::get('/ho-so-csyt/{hospital_code}',[front\HomeController::class,'ho_so_csyt']);
 Route::get('/book-doctor/{doctor_id}',[front\HomeController::class,'book_doctor']);
-Route::get('/booking-doctor/{doctor_id}',[front\CheckOutController::class,'booking_doctor']);
+Route::get('/booking-doctor/{doctor_id}',[front\CheckOutController::class,'booking_doctor'])->middleware('auth.userlogin');
 Route::get('/hscsyt', function () {
     return view('front.Hosobv');
 });
@@ -57,7 +57,8 @@ Route::get('/search-customer',[dashboard\AdminController::class,'show_customer']
 Route::get('/show-detail-customer/{customer_id}',[dashboard\AdminController::class,'show_detail_customer']);
 Route::get('/update-detail-customer/{customer_id}',[dashboard\AdminController::class,'update_detail_customer']);
 
-Route::get('/admin-add-category-product',[dashboard\ProductController::class,'add_category_product']);
+Route::get('/admin-add-category-hospital',[dashboard\ProductController::class,'add_category_hospital']);
+Route::get('/admin-add-category-doctor',[dashboard\ProductController::class,'add_category_doctor']);
 Route::get('/admin-all-category-hospital',[dashboard\ProductController::class,'all_category_hospital']);
 Route::post('/save-category-hospital',[dashboard\ProductController::class,'save_category_hospital']);
 Route::get('/admin-edit-category-hospital/{hospital_id}',[dashboard\ProductController::class,'edit_category_hospital']);

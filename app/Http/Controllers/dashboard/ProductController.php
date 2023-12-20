@@ -21,8 +21,11 @@ class ProductController extends Controller
           return view('dashboard.all_category_hospital')->with('all_category_product', $all_category_product);
      }
 
-    public function add_category_product(){
-        return view('dashboard.add_category_product');
+    public function add_category_hospital(){
+        return view('dashboard.add_category_hospital');
+    }
+    public function add_category_doctor(){
+        return view('dashboard.add_category_doctor');
     }
 
     public function save_category_hospital(Request $request){
@@ -30,6 +33,7 @@ class ProductController extends Controller
         $data['name_hospital'] = $request->name_hospital;
         $data['address_hospital'] = $request->address_hospital;
         $data['book_hospital'] = $request->NumberOfRegistrations;
+        $data['description_hospital'] = $request->description_hospital;
         $check_hospital_code = $request->hospital_code;
         $is_True = DB::table('all_category_hospital')->select('hospital_code')->where('hospital_code',$check_hospital_code)->count()==0;
         $get_image = $request->file('img_hospital');
@@ -44,11 +48,11 @@ class ProductController extends Controller
                 $data['hospital_code'] = $check_hospital_code;
                 DB::table('all_category_hospital')->insert($data);
                 Session::put('message','Thêm danh mục bệnh viện thành công');
-                return Redirect::to('admin-add-category-product');
+                return Redirect::to('admin-add-category-hospital');
             }else{
                 Session::put('message_error','Mã bệnh viện đã tồn tại');
                 $request->flash();
-                return Redirect::to('admin-add-category-product');
+                return Redirect::to('admin-add-category-hospital');
             }
 
         }
@@ -58,12 +62,12 @@ class ProductController extends Controller
         $data['hospital_code'] = $check_hospital_code;
         DB::table('all_category_hospital')->insert($data);
         Session::put('message','Thêm danh mục bệnh viện thành công');
-        return Redirect::to('admin-add-category-product');
+        return Redirect::to('admin-add-category-hospital');
         }
      else{
         Session::put('message_error','Mã bệnh viện đã tồn tại');
         $request->flash();
-        return Redirect::to('admin-add-category-product');
+        return Redirect::to('admin-add-category-hospital');
         }
        }
 
@@ -79,6 +83,7 @@ class ProductController extends Controller
         $data['hospital_code'] = $request->hospital_code;
         $data['address_hospital'] = $request->address_hospital;
         $data['book_hospital'] = $request->NumberOfRegistrations;
+        $data['description_hospital'] = $request->description_hospital;
         $get_image =$request->file('img_hospital');
        if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
@@ -120,21 +125,22 @@ public function save_category_doctor(Request $request){
     $data['star_doctor'] = $request->star_doctor;
     $data['price_book'] = $request->price_book;
     $data['book_doctor'] = $request->book_doctor;
+    $data['description_doctor']= $request->description_doctor;
     $get_image = $request->file('img_doctor');
      if($get_image){
         $get_name_image = $get_image->getClientOriginalName();
         $name_image = current(explode('.',$get_name_image));
         $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-        $get_image ->move('upload/doctor',$new_image)->move('ho-so-csyt/upload/doctor',$new_image);
+        $get_image ->move('upload/doctor',$new_image);
         $data['img_doctor'] = $new_image;
         DB::table('all_category_doctor')->insert($data);
    Session::put('message','Thêm danh mục bác sĩ thành công');
-   return Redirect::to('admin-add-category-product');
+   return Redirect::to('admin-add-category-doctor');
      }
      $data['img_doctor'] = '';
    DB::table('all_category_doctor')->insert($data);
    Session::put('message','Thêm danh mục bác sĩ thành công');
-   return Redirect::to('admin-add-category-product');
+   return Redirect::to('admin-add-category-doctor');
 }
 public function update_category_doctor(Request $request,$doctor_id){
     $data = array();
@@ -145,6 +151,7 @@ public function update_category_doctor(Request $request,$doctor_id){
     $data['star_doctor'] = $request->star_doctor;
     $data['price_book'] = $request->price_book;
     $data['book_doctor'] = $request->book_doctor;
+    $data['description_doctor']= $request->description_doctor;
     $get_image =$request->file('img_doctor');
    if($get_image){
         $get_name_image = $get_image->getClientOriginalName();

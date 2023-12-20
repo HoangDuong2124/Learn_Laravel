@@ -20,7 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{asset('dashboard/css/font-awesome.css')}}" rel="stylesheet">
 <!-- //font-awesome icons -->
 <script src="{{asset('dashboard/js/jquery2.0.3.min.js')}}"></script>
-
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -260,29 +260,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>Booking </span>
+                        <span>Danh sách </span>
 
                     </a>
                     <ul class="sub">
 						<li><a href="/admin-all-category-hospital">Danh sánh bệnh viện</a></li>
 						<li><a href="/admin-all-category-doctor">Danh sách bác sĩ</a></li>
-                        <li><a href="/admin-add-category-product">Thêm mới</a></li>
+
                     </ul>
-                </li>
-                <li>
-                    <a href="fontawesome.html">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Font awesome </span>
-                    </a>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>Chi tiết danh mục</span>
+                        <span>Thêm mới</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
+                        <li><a href="/admin-add-category-hospital">Thêm mới bệnh viện</a></li>
+                        <li><a href="/admin-add-category-doctor">Thêm mới bác sĩ</a></li>
                     </ul>
                 </li>
 

@@ -20,6 +20,7 @@ return new class extends Migration
            $table->string('name_hospital');
            $table->string('address_hospital');
            $table->integer('book_hospital');
+           $table->text('description_hospital')->nullable();
            $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

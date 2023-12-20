@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('hospital_code');
             $table->string('specialist_doctor');
             $table->integer('price_book');
+            $table->text('description_doctor')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

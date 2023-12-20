@@ -26,7 +26,6 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -631,7 +630,52 @@ use Illuminate\Support\Facades\Auth;
             </div>
         </footer>
     </div>
+    @if (session('success'))
+    <script>
+        // Sử dụng JavaScript để hiển thị toast notification
+        jQuery(document).ready(function ($) {
+            $.toast({
+                text: "{{ session('success') }}", // Sử dụng Blade syntax để lấy giá trị từ session
+                heading: 'Thông báo!',
+                icon: 'success',
+                showHideTransition: 'fade',
+                allowToastClose: true,
+                hideAfter: 4000,
+                stack: false,
+                position: 'top-right',
+                textAlign: 'left',
+                loader: true,
+                loaderBg: '#9EC600',
 
+            });
+        });
+
+        {{ session()->forget('success') }}
+    </script>
+    @endif
+    @if (session('error'))
+    <script>
+        // Sử dụng JavaScript để hiển thị toast notification
+        jQuery(document).ready(function ($) {
+            $.toast({
+                text: "{{ session('error') }}", // Sử dụng Blade syntax để lấy giá trị từ session
+                heading: 'Thông báo!',
+                icon: 'error',
+                showHideTransition: 'fade',
+                allowToastClose: true,
+                hideAfter: 4000,
+                stack: false,
+                position: 'top-right',
+                textAlign: 'left',
+                loader: true,
+                loaderBg: '#ffcccc',
+
+            });
+        });
+
+        {{ session()->forget('success') }}
+    </script>
+    @endif
 </body>
 
 </html>

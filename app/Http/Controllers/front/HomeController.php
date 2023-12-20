@@ -55,10 +55,10 @@ class HomeController extends Controller
         $data['password'] = Hash::make($request->signup_password);
         if($check_email){
             DB::table('users')->insert($data);
-            return redirect()->route('home')->with('success','Đăng kí thành công');
+            return back()->with('success','Đăng kí thành công');
         }
         else{
-            return redirect()->route('home')->with('error','Tài khoản email đã được đăng kí');
+            return back()->with('error','Tài khoản email đã được đăng kí');
         }
      }
      public function signin_user(Request $request){
@@ -68,7 +68,7 @@ class HomeController extends Controller
         ];
         if(Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->route('home')->with('success','Đăng nhập thành công');
+            return back()->with('success','Đăng nhập thành công');
         }
         else{
 
@@ -78,7 +78,7 @@ class HomeController extends Controller
      public function logout(){
         Auth::logout();
        //return back();
-        return Redirect::to('/');
+        return back();
     }
     // public function test1(){
     //     return view('test');

@@ -56,7 +56,7 @@ class CheckOutController extends Controller
       $data['customer_status'] = "0";
       DB::table('all_book_appointment')->insert($data);
 
-     return Redirect::to('/search-doctor');
+     return back()->with('success','Đặt lịch thành công');
 
    }
     //

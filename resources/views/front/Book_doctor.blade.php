@@ -35,27 +35,10 @@
                         {{$show_detail_doctor->hospital_doctor}}
                         </a></h4>
                         <div class="price-info">
-                            <div class="price-detail"><span class="price-icon"><svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="1.66669" y="0.5" width="16" height="16" fill="#FFAD4D"></rect>
-                                        <g clip-path="url(#clip0_2121_5638)">
-                                            <path d="M14.969 6.5001C14.8622 6.29437 14.6487 6.16676 14.4169 6.16676H10.3387L11.6627 2.85679C11.74 2.66473 11.7164 2.44584 11.6 2.27396C11.4836 2.10209 11.2684 2 11.0835 2H6.50005C6.18676 2 5.92217 2.23193 5.88076 2.54272L5.04741 8.79286C5.02298 8.97151 5.07751 9.1512 5.19632 9.28662C5.31512 9.42204 5.48674 9.50017 5.66669 9.50017H9.47668L8.38863 14.555C8.32597 14.8472 8.47897 15.1425 8.75322 15.2605C8.83343 15.318 8.91677 15.3336 9.0001 15.3336C9.20112 15.3336 9.39647 15.236 9.516 15.0618L14.9328 7.14491C15.0627 6.95324 15.0784 6.70584 14.969 6.5001Z" fill="white"></path>
-                                        </g>
-                                        <rect x="1.66669" y="0.5" width="16" height="16" stroke="#FFAD4D"></rect>
-                                        <path d="M2 0.00250223V16.9975H0.143839C0.0570245 17.0031 0 16.9975 0 16.9975H0.143839C0.420571 16.9796 1 16.8472 1 16.0533C1 15.0104 0 15.2079 0 14.165C0 13.1221 1 13.3196 1 12.2767C1 11.2338 0 11.4312 0 10.3883C0 9.34544 1 9.5429 1 8.5C1 7.4571 0 7.65457 0 6.61167C0 5.56877 1 5.76623 1 4.72333C1 3.68044 0 3.8779 0 2.835C0 1.7921 1 1.98957 1 0.946669C1 0.152811 0.420569 0.0204488 0.143837 0.00250223H0C0 0.00250223 0.0570236 -0.00312778 0.143837 0.00250223H2Z" fill="#FFAD4D"></path>
-                                        <path d="M17.8333 0.00250223V16.9975H19.6895C19.7763 17.0031 19.8333 16.9975 19.8333 16.9975H19.6895C19.4127 16.9796 18.8333 16.8472 18.8333 16.0533C18.8333 15.0104 19.8333 15.2079 19.8333 14.165C19.8333 13.1221 18.8333 13.3196 18.8333 12.2767C18.8333 11.2338 19.8333 11.4312 19.8333 10.3883C19.8333 9.34544 18.8333 9.5429 18.8333 8.5C18.8333 7.4571 19.8333 7.65457 19.8333 6.61167C19.8333 5.56877 18.8333 5.76623 18.8333 4.72333C18.8333 3.68044 19.8333 3.8779 19.8333 2.835C19.8333 1.7921 18.8333 1.98957 18.8333 0.946669C18.8333 0.152811 19.4127 0.0204488 19.6895 0.00250223H19.8333C19.8333 0.00250223 19.7763 -0.00312778 19.6895 0.00250223H17.8333Z" fill="#FFAD4D"></path>
-                                        <defs>
-                                            <clipPath id="clip0_2121_5638">
-                                                <rect width="11.25" height="15" fill="white" transform="translate(4.04169 1)"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg></span><span class="price-number">200.000đ</span><span class="origin-price">{{$show_detail_doctor->price_book}}VNĐ</span></div>
+                            <div class="price-detail"><span class="price-number">{{$show_detail_doctor->price_book}}VNĐ</span></div>
                         </div>
                         <div class="special-items">
-                            <div class="special-item">Chuyên khoa Ngoại</div>
-                            <div class="special-item">Chuyên khoa Chấn thương chỉnh hình</div>
-                            <div class="special-item">Chuyên khoa Phẫu Thuật Cột sống</div>
-                            <div class="special-item">Chuyên khoa Cơ Xương Khớp</div>
-                            <div class="special-item">Chuyên khoa Cơ - Xương - Khớp</div>
+                            <div class="special-item">{{$show_detail_doctor->specialist_doctor}}</div>
                         </div>
                     </div>
                     <div class="doctor-more">
@@ -86,7 +69,7 @@
                 <div class="group-time-picker">
                     <div class="head-time-picker">
                         <div class="label-time-picker">Lịch tư vấn trực tuyến </div>
-<!-- 
+<!--
                         <div class="date-picker">
                             <div class="input">
                                 <div class="result">Select Date: <span></span></div>
@@ -132,7 +115,7 @@
                                 </div>
                             </div> -->
                     </div>
-          
+
 
                     <!-- <div class="time-picker">
                         <div class="list-time">
@@ -169,7 +152,7 @@
                         </div>
                     </div> -->
                 </div>
-                    
+
                     <div class="radio">
                         <label>
                             <input type="radio" name="time" id="input" value=" Sáng" checked="checked">
@@ -181,90 +164,24 @@
                             Đặt hẹn chiều
                         </label>
                     </div>
-                    
+
                 <div class="container-button">
                     <button type="submit" class="button-booking">
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE7SURBVHgB7VTRccIwDJU5BsgI2aB0g4zABmQDGIFOQDdIOkFHACagnSBhArqB+gQvjeu6jculd/3g3b1TYktPsk62yA0DcKmOqprBzPnbOud2MhYgvtGvaMDZUKyLiBUwBX9rcAmuwBfwCXzj/oLf9zhNK4mVVhpHwxb5viX3qlTxLuAAzu0kFDasvok5mU9qgi3FZpGkjxH/rCvoJ92J932k9VtxR7uAUB7ELmn3kgK2pMOzdyIN1iu2RmkzTyPXy8SVsQQHvQ4Vi9sG64XpTiluF8h6X8tlFFNhE1SShh34yvblHwmk7/v+NzcUhbUUqq0wiw3bM5VxsIb4MbYxkT/GWAnWkTGOJog6JaAEG5sk6e9OD87vSa9DwzGtg/Xz0+78JDAb+XyTh9CCD91rSo3zy4u1Wm74F3gHEJOvmn0/JnsAAAAASUVORK5CYII=" alt="">
                           <span class="button-text">Đặt lịch
                              <span class="button-text-small"></span>
                             </span>
-                        </button></div>          
+                        </button></div>
             </form>
             </div>
         </div>
         <div class="container-doctor-exp">
-            <h4 class="doctor-exp-title">Kinh nghiệm khám chữa bệnh</h4>
-            <pre class="doctor-exp-text text-content">Thế mạnh chuyên môn:
-    - Chỉnh hình cột sống.
-    - Mổ ít xâm lấn cột sống.
-    - Mổ thay đĩa đệm nhân tạo, mổ cột sống đường trước.
-    - Mổ cột sống cổ cao.
-    - Ung thư di căn cột sống, u nguyên phát cột sống, tủy sống.</pre>
-            <div>
-                <h4 class="doctor-exp-title">Quá trình công tác</h4>
-                <ul class="timeline">
-                    <li><span class="font-weight-bold">(
-                            <!-- -->1996
-                            <!-- --> -
-                            <!-- -->2002
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Học bác sĩ đa khoa
-                            <!-- -->,
-                        </span><span>Đại học Y Hà Nội</span></li>
-                    <li><span class="font-weight-bold">(
-                            <!-- -->2003
-                            <!-- --> -
-                            <!-- -->2006
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Bác sĩ nội trú - Bệnh viện HN Việt Đức
-                            <!-- -->,
-                        </span><span>Đại học Y Hà Nội</span></li>
-                    <li><span class="font-weight-bold">(
-                            <!-- -->2007
-                            <!-- --> -
-                            <!-- -->2008
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Bác sĩ khoa CTCH
-                            <!-- -->,
-                        </span><span>Bệnh viện HN Việt Đức</span></li>
-                    <li><span class="font-weight-bold">(
-                            <!-- -->2008
-                            <!-- --> -
-                            <!-- -->2016
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Phẫu thuật cột sống
-                            <!-- -->,
-                        </span><span>Bệnh viện HN Việt Đức</span></li>
-                    <li><span class="font-weight-bold">(
-                            <!-- -->2010
-                            <!-- --> -
-                            <!-- -->2015
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Nghiên cứu sinh chuyên ngành Chấn thương chỉnh hình
-                            <!-- -->,
-                        </span><span>Đại học Y Hà Nội</span></li>
-                    <li><span class="font-weight-bold">(
-                            <!-- -->2016
-                            <!-- --> -
-                            <!-- -->2021
-                            <!-- -->)
-                        </span><span>
-                            <!-- -->Phó trưởng khoa Phẫu thuật cột sống
-                            <!-- -->,
-                        </span><span>Bệnh viện HN Việt Đức</span></li>
-                </ul>
-            </div>
+            {!! $show_detail_doctor->description_doctor !!}
         </div>
         @endforeach
     </div>
 </div>
 </div>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-<script src="front/scripts.js"></script>
+
+
 @endsection

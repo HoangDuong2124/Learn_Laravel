@@ -771,50 +771,5 @@
         </div>
     </section>
 
-    @if (session('success'))
-    <script>
-        // Sử dụng JavaScript để hiển thị toast notification
-        jQuery(document).ready(function ($) {
-            $.toast({
-                text: "{{ session('success') }}", // Sử dụng Blade syntax để lấy giá trị từ session
-                heading: 'Thông báo!',
-                icon: 'success',
-                showHideTransition: 'fade',
-                allowToastClose: true,
-                hideAfter: 4000,
-                stack: false,
-                position: 'top-right',
-                textAlign: 'left',
-                loader: true,
-                loaderBg: '#9EC600',
 
-            });
-        });
-
-        {{ session()->forget('success') }}
-    </script>
-    @endif
-    @if (session('error'))
-    <script>
-        // Sử dụng JavaScript để hiển thị toast notification
-        jQuery(document).ready(function ($) {
-            $.toast({
-                text: "{{ session('error') }}", // Sử dụng Blade syntax để lấy giá trị từ session
-                heading: 'Thông báo!',
-                icon: 'error',
-                showHideTransition: 'fade',
-                allowToastClose: true,
-                hideAfter: 4000,
-                stack: false,
-                position: 'top-right',
-                textAlign: 'left',
-                loader: true,
-                loaderBg: '#ffcccc',
-
-            });
-        });
-
-        {{ session()->forget('success') }}
-    </script>
-    @endif
 @endsection

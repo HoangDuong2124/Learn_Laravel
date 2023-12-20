@@ -263,28 +263,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>Booking </span>
+                        <span>Danh sách </span>
                     </a>
                     <ul class="sub">
 						<li><a href="{{URL::to('/admin-all-category-hospital')}}">Danh sánh bệnh viện</a></li>
 						<li><a href="{{URL::to('/admin-all-category-doctor')}}">Danh sách bác sĩ</a></li>
-                        <li><a href="/admin-add-category-product">Thêm mới</a></li>
+
                     </ul>
                 </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Font awesome </span>
-                    </a>
-                </li>
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>Chi tiết danh mục</span>
+                        <span>Thêm mới</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="">Chi tiết danh mục bệnh viện</a></li>
-                        <li><a href="">Chi tiết danh mục bác sĩ</a></li>
+                        <li><a href="/admin-add-category-hospital">Thêm mới bệnh viện</a></li>
+                        <li><a href="/admin-add-category-doctor">Thêm mới bác sĩ</a></li>
                     </ul>
                 </li>
 
