@@ -20,6 +20,19 @@ class HomeController extends Controller
     public function index(){
         return view('front.Home');
        }
+    public function user_profile() {
+             return view('front.user_profile');
+    }
+    public function edituser() {
+        return view('front.edituser');
+}
+public function updateuser(  Request $request) {
+        $data = array();
+        $data['name'] = $request->name;
+        $data['phonenumber'] = $request->phonenumber;
+            DB::table('users')->update($data);
+            return redirect('/user-profile')->with('success','Cập nhật thông tin thành công');
+}
     public function search_hospital(){
         $cate_hospital =  DB::table('all_category_hospital')->get();
         return view('front.Search_Hospital')->with('cate_hospital',$cate_hospital);
@@ -41,10 +54,13 @@ class HomeController extends Controller
     }
     public function book_doctor($doctor_id){
         $show_detail_doctor = DB::table('all_category_doctor')->where('doctor_id',$doctor_id)->get();
-      //  $show_detail_doctor = DB::table('all_category_doctor')->where('hospital_code',$hospital_code)->get();
-       // $manager_category = view('front.Hosobv')->with('show_detail_hospital',$show_detail_hospital)->with('show_detail_doctor',$show_detail_doctor);
-       // $show_all_hospital = DB::table('all_category_hospital')->join('all_category_doctor', 'all_category_hospital.hospital_code','=','all_category_doctor.hospital_code')->where('hospital_code',$hospital_code)->get();
         return view('front.Book_doctor')->with('show_detail_doctor',$show_detail_doctor);
+      }
+      public function cancel_booking($doctor_id){
+        $data = array();
+        $data['customer_status'] = 3;
+        DB::table('all_book_appointment')->where('doctor_id',$doctor_id)->update($data);
+        return back()->with('success','Huỷ lịch thành công');
       }
     public function signup_user(Request $request){
         $check_email = DB::table('users')->where('email',$request->signup_email)->count()==0;

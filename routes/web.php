@@ -18,12 +18,20 @@ use App\Http\Controllers\dashboard;
 
 Route::get('/',[front\HomeController::class,'index'])->name('home');
 Route::get('/home',[front\HomeController::class,'index']);
+Route::middleware(['auth.checkuserlogin'])->group(function () {
+    Route::get('/user-profile',[front\HomeController::class,'user_profile']);
+    Route::get('/edituser',[front\HomeController::class,'edituser']);
+    Route::post('/edituser',[front\HomeController::class,'updateuser']);
+    Route::get('/history-user',[front\CheckOutController::class,'history_book']);
+    Route::get('/logout-user',[front\HomeController::class,'logout']);
+});
 
 Route::get('/search-hospital',[front\HomeController::class,'search_hospital']);
 Route::get('/search-doctor',[front\HomeController::class,'search_doctor']);
 Route::get('/search-service',[front\HomeController::class,'search_service']);
 Route::get('/ho-so-csyt/{hospital_code}',[front\HomeController::class,'ho_so_csyt']);
 Route::get('/book-doctor/{doctor_id}',[front\HomeController::class,'book_doctor']);
+Route::get('/cancel-booking/{doctor_id}',[front\HomeController::class,'cancel_booking']);
 Route::get('/booking-doctor/{doctor_id}',[front\CheckOutController::class,'booking_doctor'])->middleware('auth.userlogin');
 Route::get('/hscsyt', function () {
     return view('front.Hosobv');
@@ -37,8 +45,6 @@ Route::get('/doi-tac', function () {
 });
 Route::post('/signup-user',[front\HomeController::class,'signup_user']);
 Route::post('/signin-user',[front\HomeController::class,'signin_user']);
-Route::get('/history-user',[front\CheckOutController::class,'history_book']);
-Route::get('/logout-user',[front\HomeController::class,'logout']);
 Route::post('/timkiem-bv',[front\CheckOutController::class,'search_hospital']);
 Route::post('/timkiem-bs',[front\CheckOutController::class,'search_doctor']);
 Route::get('/send-mail',[front\CheckOutController::class,'sendmail']);

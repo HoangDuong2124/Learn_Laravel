@@ -300,7 +300,7 @@ use Illuminate\Support\Facades\Auth;
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu-user extended logout ">
-                        <li><a href="#"><i style="margin-right:3px;color:blueviolet" class=" fa-solid fa-user"></i> Profile</a></li>
+                        <li><a href="user-profile"><i style="margin-right:3px;color:blueviolet" class=" fa-solid fa-user"></i> Profile</a></li>
                         <li><a href="/history-user"><i style="margin-right:3px;color:blueviolet" class="fa-regular fa-calendar-days"></i> Booking History</a></li>
                         <li><a href="#"><i style="margin-right:3px;color:#8b8e9e;" class="fa fa-cog"></i>  Settings</a></li>
                         <li><a href="/logout-user"><i style="margin-right:3px;color:#8b8e9e" class="fa fa-key"></i> Log Out</a></li>
@@ -361,7 +361,7 @@ use Illuminate\Support\Facades\Auth;
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu-user extended logout ">
-        <li><a href="#"><i style="margin-right:3px;color:blueviolet" class=" fa-solid fa-user"></i> Profile</a></li>
+        <li><a href="/user-profile"><i style="margin-right:3px;color:blueviolet" class=" fa-solid fa-user"></i> Profile</a></li>
         <li><a href="/history-user"><i style="margin-right:3px;color:blueviolet" class="fa-regular fa-calendar-days"></i> Booking History</a></li>
         <li><a href="#"><i style="margin-right:3px;color:#8b8e9e;" class="fa fa-cog"></i>  Settings</a></li>
         <li><a href="/logout-user"><i style="margin-right:3px;color:#8b8e9e" class="fa fa-key"></i> Log Out</a></li>

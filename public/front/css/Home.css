@@ -10134,3 +10134,21 @@ body {
 }
 
 /*     ĐẶT LỊCH KHÁM BÁC SĨ  END   */
+/*    USER PROFILE    */
+
+
+.user_profile{
+    padding: 30px 100px;
+}
+#edituser{
+    background-color: #fff;
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+#edituser form{
+    padding: 20px;
+}
+/*    USER PROFILE  END   */

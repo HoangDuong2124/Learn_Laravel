@@ -32,11 +32,11 @@
                     </div>
                     <div class="WPNwG4">
                         <div class="RcKSvW"><a style="text-decoration:underline;color:red " class="_2GgWAA" >
-                           
+
                                 <span class="_0vCgDb">
                                   @if($show_history->customer_status==0)
                                    Đang xử lí
-                                  @endif 
+                                  @endif
                                   @if($show_history->customer_status==1)
                                    Đã lên lịch
                                   @endif
@@ -45,7 +45,7 @@
                                   @endif
                                   @if($show_history->customer_status==3)
                                    Đã hủy lịch
-                                  @endif 
+                                  @endif
                                 </span></a>
                             <div class="shopee-drawer" id="pc-drawer-id-8" tabindex="0">
                             </div>
@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="tODfT4">
                                             <div>
-                                                <div class="QJqUaT"><span class="WVc4Oc"> 
+                                                <div class="QJqUaT"><span class="WVc4Oc">
 
                                                 </span>
                                             </div>
@@ -107,7 +107,7 @@
                                                 <div class="_9ca9GU">
                                                     {{$show_history->hospital_doctor}}
                                                 </div>
-                     
+
                                             </div>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
                                         <div>
                                             <div class="VN6h8+">
                                                 <button class="stardust-button stardust-button--secondary Kz9HeM">
-                                                Chi tiết lịch khám 
+                                                Chi tiết lịch khám
                                             </button>
                                                 </div>
                                         </div>
@@ -143,7 +143,7 @@
         </div>
         <div class="_1ERzqw">
             <div class="cLwmWY">
-                <span class="ZQEJyY">Ngày đặt khám 
+                <span class="ZQEJyY">Ngày đặt khám
                     <div class="shopee-drawer" id="pc-drawer-id-9" tabindex="0">
                         <u class="qMirbL">{{$show_history->created_at}}</u>
                     </div>
@@ -152,18 +152,29 @@
                     ghi gi do di
                 </span> -->
             </div>
+            @if($show_history->customer_status==0)
+            <div class="NIZAp8">
+
+                <div class="VN6h8+"><a style="text-decoration: none;" href="/cancel-booking/{{$show_history->doctor_id}}"><button style="background:red;" class="stardust-button stardust-button--secondary book-again Kz9HeM">Huỷ lịch</button></a>
+                </div>
+            </div>
+            @endif
+            @if($show_history->customer_status==2)
             <div class="NIZAp8">
                 <div class="_8vTqu9">
                     <button class="stardust-button stardust-button--primary Kz9HeM">Đánh giá</button>
                 </div>
-                <!-- <div class="VN6h8+">
-                    <button class="stardust-button stardust-button--secondary Kz9HeM">
-                    Chi tiết lịch khám 
-                </button>
-                    </div> -->
-                <div class="VN6h8+"><button style="background:orange;" class="stardust-button stardust-button--secondary book-again Kz9HeM"><a style="text-decoration: none;" href="/book-doctor/{{$show_history->doctor_id}}">Đặt lại</a></button>
+                <div class="VN6h8+"><a style="text-decoration: none;" href="/book-doctor/{{$show_history->doctor_id}}"><button style="background:orange;" class="stardust-button stardust-button--secondary book-again Kz9HeM">Đặt lại</button></a>
                 </div>
             </div>
+            @endif
+            @if($show_history->customer_status==3)
+            <div class="NIZAp8">
+                <div class="VN6h8+"><a style="text-decoration: none;" href="/book-doctor/{{$show_history->doctor_id}}"><button style="background:orange;" class="stardust-button stardust-button--secondary book-again Kz9HeM">Đặt lại</button></a>
+                </div>
+            </div>
+            @endif
+
         </div>
     </div>
            @else
@@ -188,6 +199,6 @@
             </a></button>
             </div> -->
         </div>
-      </div> 
+      </div>
      </div>
 @endsection
