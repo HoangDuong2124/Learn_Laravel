@@ -30,7 +30,7 @@ public function updateuser(  Request $request) {
         $data = array();
         $data['name'] = $request->name;
         $data['phonenumber'] = $request->phonenumber;
-            DB::table('users')->update($data);
+            DB::table('users')->where('id',Auth::user()->id)->update($data);
             return redirect('/user-profile')->with('success','Cập nhật thông tin thành công');
 }
     public function search_hospital(){
